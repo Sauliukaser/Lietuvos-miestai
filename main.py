@@ -90,8 +90,8 @@ while is_on:
 
     districts = ["Šiaulių", "Alytaus", "Utenos", "Kauno", "Vilniaus", "Panevėžio", "Klaipėdos", "Marijampolės", "Tauragės", "Telšių"]
     for district in districts:
-        mygtukas = Button(window, borderwidth=3, text=district, width=12, font=("Arial", 25), command=lambda x=district: district_choice(x))
-        mygtukas.pack()
+        button = Button(window, borderwidth=3, text=district, width=12, font=("Arial", 25), command=lambda x=district: district_choice(x))
+        button.pack()
 
     button_off = Button(window, text="Išjungti", width=5, font=15, command=off, fg="red")
     button_off.place(x=740, y=760)
