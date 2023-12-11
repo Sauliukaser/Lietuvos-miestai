@@ -1,5 +1,6 @@
+import os
 
-lt_apskritys_ir_miestai = {
+districts_and_cities = {
     'Šiaulių': {
         'Akmenė': {"loc": (-257, 414), "text_loc": (-248, 401)},
         'Joniškis': {"loc": (-84, 405), "text_loc": None},
@@ -125,3 +126,10 @@ lt_apskritys_ir_miestai = {
     }
 }
 
+
+
+# import os
+# file_path = os.get_exec_path()
+# print(file_path)
+# image = file_path + "\\images\\blank_map.gif"
+# print(image)

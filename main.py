@@ -4,32 +4,36 @@ from tkinter import *
 from tkinter import messagebox, ttk
 
 from turtlee import Marking
-from data import lt_apskritys_ir_miestai
+from data import districts_and_cities
 
 import pandas
+
+import os
+ROOT_DIR = os.getcwd()
+print(ROOT_DIR)
 
 def district_choice(district):
     global user_district_name
     user_district_name = district
-    for city in lt_apskritys_ir_miestai[district]:
-        mark_location = lt_apskritys_ir_miestai[district][city]["loc"]
+    for city in districts_and_cities[district]:
+        mark_location = districts_and_cities[district][city]["loc"]
         marking.dot_mark(mark_location)
         district_city_list.append(city)
     window.destroy()
     window.quit()
 
 def all_cities():
-    if len(user_named_cities) == len(lt_apskritys_ir_miestai[user_district_name]):
+    if len(user_named_cities) == len(districts_and_cities[user_district_name]):
         messagebox.showinfo(message="Įvardijote visus apskrities miestus!")
         window_2.destroy()
         window_2.quit()
 
 def user_city_mark():
     user_city = entry.get().title()
-    if user_city in lt_apskritys_ir_miestai[user_district_name]:
+    if user_city in districts_and_cities[user_district_name]:
         user_named_cities.append(user_city)
-        mark_location = lt_apskritys_ir_miestai[user_district_name][user_city]["loc"]
-        text_location = lt_apskritys_ir_miestai[user_district_name][user_city]["text_loc"]
+        mark_location = districts_and_cities[user_district_name][user_city]["loc"]
+        text_location = districts_and_cities[user_district_name][user_city]["text_loc"]
         if text_location is not None:
             marking.name_location_1(text_location, user_city)
         else:
@@ -67,8 +71,8 @@ while is_on:
     screen = turtle.Screen()
     screen.clear()
     screen.title("Lietuvos žemėlapis")
-    image = "C:\\Users\\mariu\\PycharmProjects\\Apskriciu - miestai\\images\\blank_map.gif"
-    image = "images/blank_map.gif"
+    image = ROOT_DIR + "\\dist\\images\\blank_map.gif"
+    # image = "images/blank_map.gif"
     screen.addshape(image)
     turtle.shape(image)
     screen.setup(1350,1000)
