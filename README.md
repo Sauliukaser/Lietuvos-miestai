@@ -12,6 +12,8 @@ Mokomojo tipo žaidimas tikrinantis geografines žinias apie Lietuvos apskriči�
 
 * Paleidžiam main.py failą
 
+Arba Dist aplanke paisleidžiam main.exe failą
+
 ### Kontaktai
 Dėl programos klaidų ir pasiūlymų:
 sauliukaser@gmail.com
