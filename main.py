@@ -9,7 +9,7 @@ from data import districts_and_cities
 import pandas
 
 import os
-ROOT_DIR = os.getcwd()
+file_path = os.getcwd()
 
 
 def district_choice(district):
@@ -48,8 +48,8 @@ def exit_and_save():
     if answer == True:
         for city in user_named_cities:
             district_city_list.remove(city)
-        mokytis = pandas.DataFrame(district_city_list)
-        mokytis.to_csv(f"{user_district_name}_apskirtis_neivardinti.txt")
+        unanswered_cities = pandas.DataFrame(district_city_list)
+        unanswered_cities.to_csv(f"{user_district_name}_apskirtis_neivardinti.txt")
         window_secondary.destroy()
         window_main.quit()
     elif answer == False:
@@ -71,7 +71,7 @@ while is_on:
     screen = turtle.Screen()
     screen.clear()
     screen.title("Lietuvos žemėlapis")
-    image = ROOT_DIR +"\\images\\blank_map.gif"
+    image = file_path + "\\images\\blank_map.gif"
     screen.addshape(image)
     turtle.shape(image)
     screen.setup(1350,1000)
